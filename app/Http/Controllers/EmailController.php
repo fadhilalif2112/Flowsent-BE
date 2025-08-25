@@ -50,10 +50,10 @@ class EmailController extends Controller
         $email = $this->emailService->getEmailByUid($folderName, $uid);
 
         if (!$email) {
-        return response()->json([
-            'error' => "Email dengan UID $uid tidak ditemukan di folder $folderName"
-        ], 404);
-    }
+            return response()->json([
+                'error' => "Email dengan UID $uid tidak ditemukan di folder $folderName"
+            ], 404);
+        }
         return response()->json($email);
     }
 
